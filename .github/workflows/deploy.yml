@@ -1,0 +1,24 @@
+name: Deploy CV to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # или master, в зависимости от того, как называется основная ветка
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4.1.0
+        with:
+          branch: gh-pages  # Укажи ветку, на которую будет публиковаться сайт
+          folder: _site     # Укажи папку с собранным сайтом (для Jekyll это _site)
+
