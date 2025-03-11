@@ -47,7 +47,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           submodules: recursive  # Загрузка всех подмодулей (например, тем)
-          fetch-depth: 0         # Получение полной истории (нужно для некоторых функций Hugo)
       - name: Setup Pages
         # Настройка GitHub Pages и получение base_url для сайта
         id: pages
